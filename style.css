@@ -1,0 +1,269 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   padding-top: 20px;
+   background-color: #1E252B;
+   color: #fff;
+   height: 300vh;
+}
+::-webkit-scrollbar {
+   width: 12px;
+}
+::-webkit-scrollbar-thumb {
+   background: orange;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: rgb(255, 181, 44);
+}
+.container {
+   width: 1200px;
+   margin: 0 auto;
+}
+
+a {
+   text-decoration: none;
+}
+
+ul li {
+   list-style: none;
+}
+
+button {
+   border: 0;
+   background: 0;
+   outline: 0;
+}
+
+.head .container .navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.head .container .navbar .logo {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+}
+
+.head .container .navbar .logo img {
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   animation: redux 2s infinite alternate;
+}
+
+@keyframes redux {
+   0% {
+      transform: translateX(0);
+   }
+
+   100% {
+      transform: translateX(260%);
+   }
+}
+.head .container .navbar .logo h3 {
+   font-size: 20px;
+   font-family: monospace;
+}
+
+
+
+.head .container .navbar .menu .btns {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 30px;
+}
+
+.head .container .navbar .menu .btns li {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   padding: 8px 20px;
+   border-radius: 30px;
+}
+
+
+
+.head .container .navbar .menu .btns li .line {
+   position: relative;
+   /* margin-top: 10px; */
+   transition: 1s;
+   width: 60px;
+   color: orange;
+   height: 3px;
+   transform: translateX(-100%);
+   opacity: 0;
+}
+
+.head .container .navbar .menu .btns li .line.active {
+   transform: translateX(0%);
+   transition: 1s;
+   opacity: 1;
+}
+
+
+
+
+.head .container .navbar .menu .btns li a {
+   font-size: 18px;
+   font-family: monospace;
+   text-decoration: none;
+   color: #fff;
+}
+
+
+
+
+.head .container .navbar .loginBtn button{
+   color: #fff;
+}
+
+.head .container .navbar .loginBtn .btnF {
+   background-color: grey;
+   padding: 12px 30px;
+   border-radius: 30px;
+   transition: 0.9s;
+   cursor: pointer;
+}
+.head .container .navbar .loginBtn .btnF:hover {
+   background-color: orange;
+}
+
+.head .container .navbar .loginBtn .btnL {
+   background-color: orange;
+   padding: 12px 30px;
+   border-radius: 30px;
+   transition: 0.9s;
+   cursor: pointer;
+}
+
+/* Text */
+.text .container {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.text .container .leftContent {
+   margin-top: 150px;
+}
+.text .container .leftContent h1 {
+   width: 460px;
+   font-size: 45px;
+   font-family: monospace;
+   margin-bottom: 30px;
+   height: 120px;
+   text-shadow: 3px 7px 5px rgba(157, 155, 155, 0.68);
+}
+
+.text .container .leftContent h1 span {
+   color: orange;
+   font-size: 38px;
+   padding-bottom: 20px;
+}
+
+.text .container .leftContent p {
+   width: 670px;
+   font-size: 20px;
+   line-height: 30px;
+   margin-bottom: 20px;
+   font-family: monospace;
+}
+
+/* .text .container .leftContent .searchDiv input {
+
+}
+
+.text .container .leftContent .searchDiv btn {
+   
+} */
+
+.text .container .right img {
+   margin-top: 100px;
+   width: 600px;
+   height: auto;
+}
+
+.line {
+   position: fixed;
+   top: 0;
+   color: orange;
+   width: 10px;
+   height: 1px;
+   border: 2px solid orange;
+}
+
+.totop {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   width: 50px;
+   height: 50px; 
+   border: 3px solid orange;
+   position: fixed;
+   bottom: 10px;
+   right: 10px;
+   border-radius: 50%;
+   transform: scale(0);
+   transition: 0.7s;
+   cursor: pointer;
+}
+
+.totop.active {
+   background: orange;
+   transform: scale(1);
+}
+
+.box-section .container .boxs {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   /* box-sizing: border-box; */
+   gap: 30px;
+}
+
+.box-section .container .top {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   font-size: 23px;
+   margin-bottom: 20px;
+   font-family: monospace;
+}
+
+
+.box-section .container .boxs .box .topContent img {
+   height: 80px;
+}
+
+.box-section .container .boxs .box {
+   position: relative;
+   padding: 10px 0px;
+   text-align: center;
+   width: 300px;
+   opacity: 0;
+   transform: translateY(100%);
+   transition: 1s;
+   border-radius: 30px;
+   border: 2px solid gray;
+}
+
+
+
+
+.box-section .container .boxs .box.active {
+   transform: translateY(0%);
+   opacity: 1;
+   transition: 0.9s;
+}
