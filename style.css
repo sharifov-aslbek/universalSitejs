@@ -5,7 +5,6 @@
 }
 
 body {
-   padding-top: 20px;
    background-color: #1E252B;
    color: #fff;
    height: 300vh;
@@ -20,6 +19,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
    background: rgb(255, 181, 44);
 }
+
 .container {
    width: 1200px;
    margin: 0 auto;
@@ -43,6 +43,7 @@ button {
    display: flex;
    align-items: center;
    justify-content: space-between;
+   padding-top: 20px;
 }
 
 .head .container .navbar .logo {
@@ -56,16 +57,16 @@ button {
    width: 60px;
    height: 60px;
    border-radius: 50%;
-   animation: redux 2s infinite alternate;
+   animation: redux 10s infinite alternate;
 }
 
 @keyframes redux {
    0% {
-      transform: translateX(0);
+      transform: rotateZ(0);
    }
 
    100% {
-      transform: translateX(260%);
+      transform: rotateZ(360deg);
    }
 }
 .head .container .navbar .logo h3 {
@@ -100,13 +101,13 @@ button {
    width: 60px;
    color: orange;
    height: 3px;
-   transform: translateX(-100%);
+   transform: translateY(120%);
    opacity: 0;
 }
 
 .head .container .navbar .menu .btns li .line.active {
-   transform: translateX(0%);
-   transition: 1s;
+   transform: translateY(-50%);
+   transition: 0.4s;
    opacity: 1;
 }
 
@@ -118,6 +119,7 @@ button {
    font-family: monospace;
    text-decoration: none;
    color: #fff;
+   padding-bottom: 5px;
 }
 
 
@@ -164,6 +166,7 @@ button {
    text-shadow: 3px 7px 5px rgba(157, 155, 155, 0.68);
 }
 
+
 .text .container .leftContent h1 span {
    color: orange;
    font-size: 38px;
@@ -178,18 +181,49 @@ button {
    font-family: monospace;
 }
 
-/* .text .container .leftContent .searchDiv input {
-
+.text .container .leftContent .searchDiv {
+   width: 350px;
+   border-radius: 15px;
+   background-color: #283036;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   padding: 0px 15px;
 }
 
-.text .container .leftContent .searchDiv btn {
-   
-} */
+.text .container .leftContent .searchDiv input {
+   border: none;
+   outline: none;
+   background: none;
+   margin-left: 20px;
+   color: #fff;
+   width: 200px;
+}
+
+.text .container .leftContent .searchDiv input::placeholder {
+   font-family: monospace;
+}
+
+.text .container .leftContent .searchDiv .btn {
+   background-color: orange;
+   border: none;
+   outline: none;
+   color: #fff;
+   border-radius: 12px;
+   padding: 10px 25px;
+}
 
 .text .container .right img {
    margin-top: 100px;
    width: 600px;
    height: auto;
+   transform: translateX(10%);
+   transition: 1s;
+}
+
+.text .container .right img.active {
+   transform: translateX(0%);
 }
 
 .line {
@@ -238,8 +272,23 @@ button {
    justify-content: center;
    flex-direction: column;
    font-size: 23px;
-   margin-bottom: 20px;
+   margin-bottom: 40px;
    font-family: monospace;
+}
+
+@keyframes title {
+   0% {
+      transform: translateY(0);
+   }
+   
+   100% {
+      transform: translateY(20px);
+   }
+}
+
+.box-section .container .top .title {
+   margin-bottom: 40px;
+   animation: title 2s infinite alternate;
 }
 
 
@@ -266,4 +315,85 @@ button {
    transform: translateY(0%);
    opacity: 1;
    transition: 0.9s;
+}
+
+
+/* Loader  */
+
+.loaderSec {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+   font-size: 20px;
+   font-family: monospace;
+   position: fixed;
+   margin: 0 auto;
+   background: black;
+   margin-top: 0px;
+   z-index: 9999;
+}
+
+.loaderSec.active {
+   display: none;
+   
+}
+
+.loaderSec .line {
+   height: 5px;
+   width: 5px;
+   background-color: orange;
+   position: fixed;
+   top: 0;
+   left: 0;
+}
+
+.loader {
+   width: 50px;
+   aspect-ratio: 1;
+   border-radius: 50%;
+   border: 8px solid #fff;
+   border-right-color: orange;
+   animation: l2 2s infinite linear;
+ }
+ @keyframes l2 {to{transform: rotate(1turn)}}
+
+
+.slider .container .content img {
+   width: 400px;
+   border: 2px solid black;
+   transform: scale(0.8);
+   transition: 0.6s;
+}
+
+.slider .container .content:hover , .img {
+   transform: scale(1.2);
+}
+
+.slider .container .content {
+   transform: scale(1);
+}
+
+.slider .container .content:hover , .caption {
+   opacity: 0.5;
+}
+
+
+
+.slider .container .content .caption {
+   position: absolute;
+   top: 0;
+   left: 0px;
+   background: #000;
+   width: 100%;
+   height: 100%;
+   opacity: 0;
+   transition: all 0.5s ease;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   text-transform: uppercase;
 }

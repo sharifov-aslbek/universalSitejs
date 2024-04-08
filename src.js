@@ -2,6 +2,7 @@ const p = document.querySelector(".text .container .leftContent h1 span")
 const text = p.textContent
 let topLine = document.querySelector(".line")
 let box22 = document.querySelectorAll('.box-section .container .boxs .box')
+let boxImg = document.querySelectorAll(".box-section .container .boxs .box .topContent img")
 let li = document.querySelectorAll(".head .container .navbar .menu .btns li")
 let lineLi = document.querySelectorAll(".head .container .navbar .menu .btns li .line")
 let toTop = document.querySelector(".totop")
@@ -77,3 +78,29 @@ box22.forEach((item) => {
     item.style.transform = "scale(1)"
   })
 })
+
+let sectionLoader = document.querySelector(".loaderSec")
+let loaderLine = document.querySelector(".loaderSec .line")
+let bgImg = document.querySelector(".text .container .right img")
+window.addEventListener("DOMContentLoaded" , () => {
+  bgImg.classList.add("active")
+  function loaderDisplay () {
+    sectionLoader.classList.add("active")
+  }
+
+  // loaderDisplay()
+
+  setTimeout(loaderDisplay, 2000);
+  setTimeout(() => {
+    clearInterval(loadintv)
+  } , 2000)
+})
+
+let countLoad = 0
+let loadintv = null
+ loadintv = setInterval(() => {
+  countLoad++
+  loaderLine.style.width = countLoad + "px"
+} , 1)
+
+
