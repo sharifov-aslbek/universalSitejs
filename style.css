@@ -7,11 +7,13 @@
 body {
    background-color: #1E252B;
    color: #fff;
-   height: 300vh;
+   height: 450vh;
 }
+
 ::-webkit-scrollbar {
    width: 12px;
 }
+
 ::-webkit-scrollbar-thumb {
    background: orange;
 }
@@ -21,8 +23,10 @@ body {
 }
 
 .container {
-   width: 1200px;
+   max-width: 1200px;
+   width: 100%;
    margin: 0 auto;
+   padding: 0px 15px;
 }
 
 a {
@@ -51,28 +55,48 @@ button {
    align-items: center;
    justify-content: center;
    gap: 10px;
+   border-radius: 20px;
 }
+
+
+.head .container .navbar .logo .lineLogo {
+   width: 70px;
+   position: absolute;
+   left: 101px;
+   border-radius: 50%;
+   height: 70px;
+   background-color: orange;
+   border-top: 5px solid red;
+   aspect-ratio: 1;
+   animation: lineLogo 2s infinite linear;
+}
+
+.head .container .navbar .logo h3 {
+   font-size: 20px;
+   font-family: monospace;
+}
+
 
 .head .container .navbar .logo img {
    width: 60px;
    height: 60px;
    border-radius: 50%;
-   animation: redux 10s infinite alternate;
+   position: relative;
+   z-index: 9999;
+   /* animation: redux 10s infinite alternate; */
 }
 
-@keyframes redux {
-   0% {
-      transform: rotateZ(0);
-   }
+.head .container .navbar .logoI {
+   display: none;
+}
 
-   100% {
-      transform: rotateZ(360deg);
+
+@keyframes lineLogo {
+   to {
+      transform: rotate(-1turn)
    }
 }
-.head .container .navbar .logo h3 {
-   font-size: 20px;
-   font-family: monospace;
-}
+
 
 
 
@@ -125,8 +149,32 @@ button {
 
 
 
-.head .container .navbar .loginBtn button{
+.head .container .navbar .loginBtn button {
    color: #fff;
+}
+
+.mobile-div {
+   background: red;
+   position: absolute;
+   right: 0;
+   height: 100%;
+   z-index: 9999;
+   top: 0;
+   width: 200px;
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   padding-top: 40px;
+   text-transform: uppercase;
+   position: fixed;
+   transform: translateY(-100%);
+   transition: 1s;
+   opacity: 0;
+}
+
+.mobile-div.active {
+   transform: translateY(0%);
+   opacity: 1;
 }
 
 .head .container .navbar .loginBtn .btnF {
@@ -136,6 +184,7 @@ button {
    transition: 0.9s;
    cursor: pointer;
 }
+
 .head .container .navbar .loginBtn .btnF:hover {
    background-color: orange;
 }
@@ -154,9 +203,11 @@ button {
    align-items: center;
    justify-content: space-between;
 }
+
 .text .container .leftContent {
    margin-top: 150px;
 }
+
 .text .container .leftContent h1 {
    width: 460px;
    font-size: 45px;
@@ -169,9 +220,10 @@ button {
 
 .text .container .leftContent h1 span {
    color: orange;
-   font-size: 38px;
+   font-size: 35px;
    padding-bottom: 20px;
 }
+
 
 .text .container .leftContent p {
    width: 670px;
@@ -228,6 +280,7 @@ button {
 
 .line {
    position: fixed;
+   z-index: 9999;
    top: 0;
    color: orange;
    width: 10px;
@@ -241,7 +294,7 @@ button {
    justify-content: center;
    font-size: 20px;
    width: 50px;
-   height: 50px; 
+   height: 50px;
    border: 3px solid orange;
    position: fixed;
    bottom: 10px;
@@ -264,6 +317,9 @@ button {
    flex-wrap: wrap;
    /* box-sizing: border-box; */
    gap: 30px;
+   max-width: 1259px;
+   width: 100%;
+
 }
 
 .box-section .container .top {
@@ -280,7 +336,7 @@ button {
    0% {
       transform: translateY(0);
    }
-   
+
    100% {
       transform: translateY(20px);
    }
@@ -306,6 +362,32 @@ button {
    transition: 1s;
    border-radius: 30px;
    border: 2px solid gray;
+}
+
+.box-section .container .boxs .box .topContent h3 {
+   transition: 1s;
+   opacity: 0;
+   transform: translateY(100%);
+}
+
+.box-section .container .boxs .box .topContent h3.active {
+   transform: translateY(0%);
+   opacity: 1;
+   transition: 1s;
+
+}
+
+.box-section .container .boxs .box .topContent p {
+   transition: 1s;
+   opacity: 0;
+   transform: translateY(100%);
+}
+
+.box-section .container .boxs .box .topContent p.active {
+   transform: translateY(0%);
+   opacity: 1;
+   transition: 1s;
+
 }
 
 
@@ -338,7 +420,7 @@ button {
 
 .loaderSec.active {
    display: none;
-   
+
 }
 
 .loaderSec .line {
@@ -352,13 +434,18 @@ button {
 
 .loader {
    width: 50px;
-   aspect-ratio: 1;
    border-radius: 50%;
    border: 8px solid #fff;
    border-right-color: orange;
+   aspect-ratio: 1;
    animation: l2 2s infinite linear;
- }
- @keyframes l2 {to{transform: rotate(1turn)}}
+}
+
+@keyframes l2 {
+   to {
+      transform: rotate(1turn)
+   }
+}
 
 
 .slider .container .content img {
@@ -368,7 +455,8 @@ button {
    transition: 0.6s;
 }
 
-.slider .container .content:hover , .img {
+.slider .container .content:hover,
+.img {
    transform: scale(1.2);
 }
 
@@ -376,7 +464,8 @@ button {
    transform: scale(1);
 }
 
-.slider .container .content:hover , .caption {
+.slider .container .content:hover,
+.caption {
    opacity: 0.5;
 }
 
@@ -396,4 +485,344 @@ button {
    justify-content: center;
    flex-direction: column;
    text-transform: uppercase;
+}
+
+
+.modal {
+   width: 50%;
+   height: 100%;
+   background: white;
+   position: absolute;
+   top: 0;
+   left: 0;
+   margin-left: 420px;
+   border-radius: 50px;
+}
+
+.modal .modal-bg {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto;
+}
+
+.aboutTime {
+   max-width: 1200px;
+   width: 100%;
+   margin-top: 70px;
+   margin-left: 200px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   margin-top: 200px;
+   margin-bottom: 200px;
+}
+
+.aboutTime .left {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.aboutTime .left .time {
+   margin-top: 40px;
+   font-size: 45px;
+   font-family: monospace;
+}
+
+.aboutTime .left .time .dot {
+   color: orange;
+}
+
+.aboutTime .left {
+   transform: translateX(-300%);
+   transition: 1s;
+}
+
+.aboutTime .left.active {
+   transform: translateX(-20%);
+   transition: 1s;
+}
+
+
+
+#clock {
+   position: relative;
+   height: 19vw;
+   width: 20vw;
+   border: 10px solid #282828;
+   box-shadow: inset 1px 1px 5px #000, 1px 1px 5px #000;
+   border-radius: 50%;
+   padding: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+
+.aboutTime .rightBlock {
+   transform: translateX(30%);
+   transition: 1s;
+   opacity: 0;
+   width: 500px;
+   font-family: monospace;
+}
+
+.aboutTime .rightBlock h1 {
+   font-size: 40px;
+   margin-bottom: 40px;
+}
+
+.aboutTime .rightBlock p {
+   font-size: 10px;
+   line-height: 25px;
+}
+
+.aboutTime .rightBlock .btn {
+   margin-top: 30px;
+   color: white;
+   text-transform: uppercase;
+   padding: 7px 16px;
+   border: 3px solid orange;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+.aboutTime .rightBlock .btn:hover {
+   border: 3px solid white;
+   color: wheat;
+}
+.aboutTime .rightBlock.active {
+   transform: translateX(-10%);
+   transition: 1s;
+   opacity: 1;
+}
+
+
+
+
+
+#clockInner {
+   position: relative;
+   background: #282828;
+   overflow: hidden;
+   width: 100%;
+   height: 100%;
+   border-radius: 100%;
+}
+
+#clockInner::after {
+   -webkit-transform: rotate(90deg);
+   -moz-transform: rotate(90deg);
+   transform: rotate(90deg);
+}
+
+
+#clockInner::after, #clockInner::before, #clockInner .marking {
+   content: "";
+   position: absolute;
+   width: 5px;
+   height: 100%;
+   background: orange;
+   z-index: 0;
+   left: 49%;
+   top: 0%;
+}
+
+#clockInner .marking {
+   background: #bdbdcb;
+   width: 3px;
+}
+
+#clockInner .marking.marking-one {
+   -webkit-transform: rotate(30deg);
+   -moz-transform: rotate(30deg);
+   transform: rotate(30deg);
+}
+
+#clockInner .marking.marking-two {
+   -webkit-transform: rotate(60deg);
+   -moz-transform: rotate(60deg);
+   transform: rotate(60deg);
+}
+
+#clockInner .marking.marking-three {
+   -webkit-transform: rotate(120deg);
+   -moz-transform: rotate(120deg);
+   transform: rotate(120deg);
+}
+
+#clockInner .marking.marking-four {
+   -webkit-transform: rotate(150deg);
+   -moz-transform: rotate(150deg);
+   transform: rotate(150deg);
+}
+
+.clockFace {
+   position: absolute;
+   top: 10%;
+   left: 10%;
+   width: 80%;
+   height: 80%;
+   background: #282828;
+   -webkit-border-radius: 100%;
+   -moz-border-radius: 100%;
+   border-radius: 100%;
+   z-index: 1;
+}
+
+#hour, #minute, #second {
+   position: absolute;
+   border-radius: 10px;
+   transform-origin: bottom;
+   z-index: 5;
+}
+
+#hour {
+   background: #e28b19;
+   width: 2.4%;
+   height: 25%;
+   top: 26%;
+   left: 48.85%;
+   opacity: 0.8;
+}
+
+#minute {
+   background: #cf6325;
+   width: 2%;
+   height: 30%;
+   top: 20%;
+   left: 48.9%;
+   opacity: 0.8;
+}
+
+#second {
+   background: #aa7c51;
+   width: 1.6%;
+   height: 40%;
+   top: 10%;
+   left: 49.25%;
+   opacity: 0.8;
+}
+
+.videoImg {
+   position: absolute;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   height: 100vh; 
+   /* margin-top: 200px; */
+   /* margin-bottom: 200px; */
+}
+
+.videoImg h1 {
+   position: relative;
+   z-index: 9999;
+   font-size: 50px;
+   font-family: monospace;
+}
+
+.videoImg button {
+   position: relative;
+   z-index: 9999;
+   color: #fff;
+   font-family: monospace;
+   margin-top: 40px; 
+   border: 2px solid orange;
+   padding: 10px 20px;
+   border-radius: 4px;
+}
+
+.videoImg .background-clip {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+}
+
+
+.footer {
+   position: absolute;
+   margin-top: 1100px;
+   width: 100%;
+}
+
+footer .container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: monospace;
+   font-weight: 400;
+   gap: 30px;
+   padding: 10px;
+   margin-top: 30px;
+}
+
+.footer .container h4 {
+   font-size: 25px;
+   margin-right: 10px;
+   margin-bottom: 10px;
+   color: orange;
+}
+
+.footer .container p {
+   margin-bottom: 10px;
+}
+
+.footer .container .astra {
+   width: 400px;
+
+}
+
+.footer .container .astra h3 {
+   color: orange;
+   font-size: 20px;
+   margin-bottom: 25px;
+}
+
+.footer .container .astra p {
+   margin-bottom: 20px;
+   line-height: 25px;
+}
+
+.footer .container .astra .logos {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 15px;
+}
+
+.footer .container .form {
+   width: 300px;
+   /* background: red; */
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   border: 3px solid orange;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+.footer .container .form:hover {
+   border: 3px solid wheat;
+}
+
+.footer .container .form input {
+   border: 0;
+   background: 0;
+   outline: 0;
+   color: #fff;
+}
+
+.footer .container .form .btn {
+   color: orange;
+   border: 2px solid orange;
+   padding: 7px 15px;
+   border-radius: 7px;
 }

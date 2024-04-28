@@ -4,8 +4,10 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="media.css">
    <!-- FontAwosome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
    <title>Document</title>
 </head>
 <body>
@@ -19,8 +21,9 @@
       <div class="container">
          <nav class="navbar">
             <div class="logo">
-               <img src="logo.png" alt="errr" class="logoImg">
-               <h3>your-logo.</h3>
+                  <img src="logo.png" alt="errr" class="logoImg">
+                  <h3>logo</h3>
+               
             </div>
 
             <div class="menu">
@@ -48,15 +51,46 @@
             <div class="loginBtn">
                <button class="btnF">Login</button>
                <button class="btnL">Sign Up</button>
-            </div>   
+            </div> 
+            
+            <i class="fa-solid fa-bars logoI"></i>
          </nav>
       </div>
    </header>
 
+   <section class="mobile-div">
+      <div class="menu">
+         <ul class="btns">
+            <li class="one">
+               <a href="">Home</a>
+               <div class="line"></div>     
+            </li>
+            <li class="two">
+               <a href="">Categories</a>
+               <div class="line"></div>
+            </li>
+            <li class="three">
+               <a href="">Menu</a>
+               <div class="line"></div>
+            </li>
+            <li class="four">
+               <a href="">Contact</a>
+               <div class="line"></div>
+            </li>
+            
+         </ul>
+
+         <div class="loginBtn">
+            <button class="btnF">Login</button>
+            <button class="btnL">Sign Up</button>
+         </div>
+      </div>
+   </section>
+
    <section class="text">
       <div class="container">
          <div class="leftContent">
-            <h1> Hello I'm <span>Front End Vue Developer</span> <p></p></h1>
+            <h1> Hello I'm <br> <span>Front End Vue Developer</span></h1>
             <p>I'm developer from Tashkent, I'm born in 2009-17-07</p>
             <form action="" class="searchDiv">
                <i class="fa-solid fa-magnifying-glass"></i>
@@ -133,19 +167,117 @@
       </div>
    </section>
 
-   <section class="slider">
-      <div class="container">
-         <div class="content">
-            <img src="slider.png" alt="">
-            <div class="caption">
-               <h1>Hello World</h1>
-               <p>Lorem ipsum dolor sit amet.</p>
+   <section class="aboutTime active">
+      <div class="left">
+         <div id="clock" class=""> 
+            <div id="clockInner">
+               <div class="marking marking-one"></div>
+               <div class="marking marking-two"></div>
+               <div class="marking marking-three"></div>
+               <div class="marking marking-four"></div>
+      
+               <div class="clockFace">
+      
+               </div>
+      
+               <div id="inner"></div>
+      
+               <div id="hour"></div>
+               <div id="minute"></div>
+               <div id="second"></div>
             </div>
-            <!-- <img src="slider.png" alt="">
-            <img src="slider.png" alt=""> -->
+   
+         </div>
+
+         <div class="time">
+            <span class="hour">
+                 
+            </span>
+            <span class="dot">:</span>
+            <span class="minute"></span>
+            <span class="dot">:</span>
+            <span class="second"></span>
          </div>
       </div>
+
+      
+
+      <div class="rightBlock">
+         <h1>Greatest of All Time</h1>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae deserunt dolorum accusamus natus, veniam non est maiores, facilis delectus error, quos asperiores. Ipsa perspiciatis ipsam qui veritatis? Eum dignissimos ut repellendus nulla assumenda saepe? Provident voluptatem vero ratione quis nihil.</p>
+         <button class="btn">Show More</button>
+      </div>
    </section>
+   
+
+   <div class="videoImg">
+      <video autoplay loop muted plays-inline class="background-clip">
+         <source src="d20fb27b1479ecee9c4226d2b7b5c4cb.mp4" type="video/mp4">
+      </video>
+      <h1>This is title</h1>
+      <button>Show more</button> 
+   </div>
+   
+   <!-- <section class="modal">
+      <div class="modal-bg">
+         <h1>Test</h1>
+         <input type="text" placeholder="Sign up ...">
+         <button>loginBtn</button>
+         <a href="">Forgot Password?</a>
+      </div>
+   </section>
+   -->
+
+   <!-- <div class="boxWidth">
+      <h1 class="title">title</h1>
+      <p class="p"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, illum?</p>
+   </div> -->
+
+
+
+
+   <footer class="footer">
+      <hr>
+     <div class="container">
+      <div class="astra">
+         <h3>astra</h3>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, quas.</p>
+         <div class="logos">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-vuejs"></i>
+         </div>
+      </div>
+      <div class="first">
+         <h4>Title</h4>
+         <p>About</p>
+         <p>Menu</p>
+         <p>Contact</p>
+         <p>Us href</p>
+        </div>
+        <div class="two">
+         <h4>Title</h4>
+         <p>About</p>
+         <p>Menu</p>
+         <p>Contact</p>
+         <p>Us href</p>
+        </div>
+        <div class="three">
+         <h4>Title</h4>
+         <p>About</p>
+         <p>Menu</p>
+         <p>Contact</p>
+         <p>Us href</p>
+        </div>
+
+        <form action="" class="form">
+         <i class="fa-solid fa-envelope"></i>
+         <input type="text" placeholder="Send me sms..">
+         <button class="btn">Send</button>
+        </form>
+     </div>
+    </footer>
    <div class="totop">
       <span>↑</span>
    </div>

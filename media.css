@@ -1,0 +1,46 @@
+@media (max-width: 1290px) {
+   .text .container .right img {
+      max-width: 400px;
+      width: 400px;
+   }
+}
+
+@media (max-width: 1097px) {
+   .text .container .right img {
+     display: none;
+   }
+
+   .text .container .leftContent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 50px auto;
+   }
+
+   .text .container .leftContent h1 {
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+   }
+
+   .text .container .leftContent p {
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+   }
+
+   .head .container .navbar .logoI {
+      display: block;
+      cursor: pointer;
+   }
+
+   .head .container .navbar .loginBtn {
+      display: none;
+   }
+
+   .head .container .navbar .menu {
+      display: none;
+   }
+
+}
